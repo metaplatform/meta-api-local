@@ -1,5 +1,6 @@
 var Api = require(__dirname + "/../index.js");
-var Endpoints = require(__dirname + "/../../meta-api-endpoints/index.js");
+var RemoteApi = require("meta-api-remote");
+var Endpoints = require("meta-api-shared").Endpoints;
 var logger = require("meta-logger");
 var ws = require("ws");
  
@@ -61,7 +62,7 @@ localClient.connect(broker).then(function(){
  */
 var connect = function(){
 
-	var client = new Api.RemoteClient("serviceDef");
+	var client = new RemoteApi.Client("serviceDef");
 
 	client.connect('ws://127.0.0.1:5010/ws').then(function(){
 
