@@ -78,6 +78,14 @@ var test = function(){
 
 		});
 
+	}).then(function(){
+
+		return localClient.subscribers("q").then(function(res){
+
+			console.log("Local subscribers RES", res);
+
+		});
+
 	}).catch(function(err){
 
 		console.log("Local ERR", err);

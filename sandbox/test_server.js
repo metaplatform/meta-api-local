@@ -39,7 +39,7 @@ localClient.connect(broker).then(function(){
 
 }).then(function(){
 
-	return localClient.subscribeQueue("q", function(msg){
+	return localClient.subscribe("q", function(msg){
 
 		console.log("Local MSG", msg);
 
@@ -70,9 +70,17 @@ var connect = function(){
 
 	}).then(function(){
 
-		return client.enqueue("q", { hello: "world" }).then(function(res){
+		return client.publish("q", { hello: "world" }).then(function(res){
 
 			console.log("Remote RES", res);
+
+		});
+
+	}).then(function(){
+
+		return client.subscribers("q").then(function(res){
+
+			console.log("Remote subscribers RES", res);
 
 		});
 
