@@ -10,10 +10,11 @@
 module.exports = {
 	
 	//Libraries
-	Broker: 		require("./lib/broker.js"),
-	Connection: 	require("./lib/connection.js"),
-	Client: 		require("./lib/client.js"),
-	MemoryQueue: 	require("./lib/memoryQueue.js"),
-	Server: 		require("./lib/server.js")
+	Broker: 			require("./lib/broker.js"),
+	BrokerLocalAuth: 	require("./lib/brokerLocalAuth.js"),
+	Connection: 		require("./lib/connection.js"),
+	Client: 			require("./lib/client.js"),
+	MemoryQueue: 		require("./lib/memoryQueue.js"),
+	Server: 			require("./lib/server.js")
 
 };
